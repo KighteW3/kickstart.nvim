@@ -570,10 +570,19 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  bashls = {},
+  pyright = {},
+  rust_analyzer = {},
+  tsserver = {
+    filetypes = { 'tsx', 'ts', 'typescript', 'typescriptreact' },
+  },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
+  eslint = {
+    filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact',
+      'javascipt', 'js' }
+  },
+  cssls = {},
+  angularls = {},
 
   lua_ls = {
     Lua = {

@@ -3,21 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 
-require("mason").setup()
-require("mason-lspconfig").setup()
-
-require("mason-lspconfig").setup {
-    ensure_installed = {
-        "rust_analyzer",
-        "pyright",
-        "tsserver",
-        "html",
-        "cssls",
-        "ts-standard",
-        "eslint",
-    }
-}
-
 return {
     {
         "ellisonleao/gruvbox.nvim",
