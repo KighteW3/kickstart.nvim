@@ -583,6 +583,10 @@ local servers = {
   },
   cssls = {},
   angularls = {},
+  biome = {
+    filetypes = { "javascript", "javascriptreact", "json", "jsonc",
+      "typescript", "typescript.tsx", "typescriptreact" },
+  },
 
   lua_ls = {
     Lua = {
