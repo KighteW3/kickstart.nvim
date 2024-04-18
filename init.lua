@@ -428,7 +428,7 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'php' },
+    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'php', 'twig', 'svelte' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -579,23 +579,27 @@ local servers = {
   pylsp = {},
   rust_analyzer = {},
   tsserver = {
-    filetypes = { 'tsx', 'ts', 'typescript', 'typescriptreact' },
+    filetypes = { 'tsx', 'ts', 'typescript', 'typescriptreact', 'vue' },
   },
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   eslint = {
     filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact',
-      'javascipt', 'js' }
+      'javascipt', 'js', 'vue' }
   },
   cssls = {},
   angularls = {},
   biome = {
     filetypes = { "javascript", "javascriptreact", "json", "jsonc",
-      "typescript", "typescript.tsx", "typescriptreact" },
+      "typescript", "typescript.tsx", "typescriptreact", 'vue' },
   },
-  intelephense = {
-    cmd = { 'intelephense', '--stdio' },
-    filetypes = { 'php' },
+  phpactor = {
+    filetypes = { 'php', 'cucumber' },
   },
+  dockerls = {},
+  docker_compose_language_service = {},
+  yamlls = {},
+  volar = {},
+  svelte = {},
 
   lua_ls = {
     Lua = {
