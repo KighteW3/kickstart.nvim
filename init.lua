@@ -577,10 +577,20 @@ require('lazy').setup({
         phpactor = {
           filetypes = { 'php', 'cucumber' },
         },
+        prettierd = {
+          filetypes = { 'vue' },
+        },
         dockerls = {},
         docker_compose_language_service = {},
         yamlls = {},
-        volar = {},
+        volar = {
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+          },
+        },
         svelte = {},
 
         lua_ls = {
@@ -852,6 +862,8 @@ require('lazy').setup({
         'typescript',
         'php',
         'twig',
+        'css',
+        'scss',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
