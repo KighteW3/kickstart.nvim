@@ -569,10 +569,16 @@ require('lazy').setup({
         eslint = {
           filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact', 'javascipt', 'js' },
         },
-        cssls = {},
+        cssls = {
+          filetypes = {
+            'css',
+            'scss',
+            'sass',
+          },
+        },
         angularls = {},
         biome = {
-          filetypes = { 'javascript', 'javascriptreact', 'json', 'jsonc', 'typescript', 'typescript.tsx', 'typescriptreact' },
+          filetypes = { 'javascript', 'javascriptreact', 'json', 'jsonc', 'typescript', 'typescript.tsx', 'typescriptreact', 'vue' },
         },
         phpactor = {
           filetypes = { 'php', 'cucumber' },
