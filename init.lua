@@ -355,11 +355,14 @@ require('lazy').setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          mappings = {
+            i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          },
+          file_ignore_patterns = {
+            'node_modules',
+          },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
@@ -565,9 +568,10 @@ require('lazy').setup({
         tsserver = {
           filetypes = { 'tsx', 'ts', 'typescript', 'typescriptreact' },
         },
+        jsonls = {},
         html = { filetypes = { 'html', 'twig', 'hbs' } },
         eslint = {
-          filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact', 'javascipt', 'js' },
+          filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact', 'javascipt', 'js', 'vue' },
         },
         cssls = {
           filetypes = {
@@ -578,7 +582,7 @@ require('lazy').setup({
         },
         angularls = {},
         biome = {
-          filetypes = { 'javascript', 'javascriptreact', 'json', 'jsonc', 'typescript', 'typescript.tsx', 'typescriptreact', 'vue' },
+          filetypes = { 'javascript', 'javascriptreact', 'json', 'jsonc', 'typescript', 'typescript.tsx', 'typescriptreact' },
         },
         phpactor = {
           filetypes = { 'php', 'cucumber' },
@@ -598,6 +602,7 @@ require('lazy').setup({
           },
         },
         svelte = {},
+        tailwindcss = {},
 
         lua_ls = {
           -- cmd = {...},
