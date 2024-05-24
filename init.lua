@@ -571,6 +571,9 @@ require('lazy').setup({
         jsonls = {},
         html = { filetypes = { 'html', 'twig', 'hbs' } },
         eslint = {
+          filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact', 'javascipt', 'js' },
+        },
+        oxlint = {
           filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact', 'javascipt', 'js', 'vue' },
         },
         cssls = {
