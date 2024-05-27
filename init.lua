@@ -582,7 +582,7 @@ require('lazy').setup({
         jsonls = {},
         html = { filetypes = { 'html', 'twig', 'hbs' } },
         eslint = {
-          filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact', 'javascipt', 'js' },
+          filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact', 'javascipt', 'js', 'vue' },
         },
         oxlint = {
           filetypes = { 'tsx', 'jsx', 'ts', 'typescript', 'typescriptreact', 'javascipt', 'js', 'vue' },
@@ -616,7 +616,9 @@ require('lazy').setup({
           },
         },
         svelte = {},
-        tailwindcss = {},
+        tailwindcss = {
+          classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
+        },
 
         lua_ls = {
           -- cmd = {...},
