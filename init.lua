@@ -616,9 +616,7 @@ require('lazy').setup({
           },
         },
         svelte = {},
-        tailwindcss = {
-          classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
-        },
+        tailwindcss = {},
 
         lua_ls = {
           -- cmd = {...},
