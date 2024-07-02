@@ -361,6 +361,7 @@ require('lazy').setup({
           },
           file_ignore_patterns = {
             'node_modules',
+            'package-lock.json',
           },
         },
         -- pickers = {}
@@ -601,6 +602,7 @@ require('lazy').setup({
         phpactor = {
           filetypes = { 'php', 'cucumber' },
         },
+        intelephense = {},
         prettierd = {
           filetypes = { 'vue' },
         },
