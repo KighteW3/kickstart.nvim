@@ -575,7 +575,19 @@ require('lazy').setup({
         bashls = {},
         pyright = {},
         pylsp = {},
-        rust_analyzer = {},
+        rust_analyzer = {
+          settings = {
+            ['rust_analyzer'] = {
+              procMacro = {
+                ignored = {
+                  leptos_macro = {
+                    'server',
+                  },
+                },
+              },
+            },
+          },
+        },
         tsserver = {
           filetypes = { 'tsx', 'ts', 'typescript', 'typescriptreact' },
         },
