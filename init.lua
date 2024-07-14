@@ -619,6 +619,7 @@ require('lazy').setup({
         },
         svelte = {},
         tailwindcss = {},
+        markdown_oxide = {},
 
         lua_ls = {
           -- cmd = {...},
