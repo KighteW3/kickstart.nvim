@@ -1,6 +1,6 @@
 return {
 
-  'mfussenegger/nvim-dap',
+  --[[ 'mfussenegger/nvim-dap',
   recommended = true,
   desc = 'Debugging support. Requires language specific adapters to be configured. (see lang extras)',
 
@@ -54,5 +54,5 @@ return {
     vscode.json_decode = function(str)
       return vim.json.decode(json.json_strip_comments(str))
     end
-  end,
+  end, ]]
 }
