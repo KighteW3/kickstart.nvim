@@ -46,13 +46,13 @@ return {
     for name, sign in pairs(LazyVim.config.icons.dap) do
       sign = type(sign) == 'table' and sign or { sign }
       vim.fn.sign_define('Dap' .. name, { text = sign[1], texthl = sign[2] or 'DiagnosticInfo', linehl = sign[3], numhl = sign[3] })
-    end
+    END
 
-    -- setup dap config by VsCode launch.json file
-    local vscode = require 'dap.ext.vscode'
-    local json = require 'plenary.json'
-    vscode.json_decode = function(str)
-      return vim.json.decode(json.json_strip_comments(str))
-    end
-  end, ]]
+    -- SETUP DAP CONFIG BY VSCODE LAUNCH.JSON FILE
+    LOCAL VSCODE = REQUIRE 'DAP.EXT.VSCODE'
+    LOCAL JSON = REQUIRE 'PLENARY.JSON'
+    VSCODE.JSON_DECODE = FUNCTION(STR)
+      RETURN VIM.JSON.DECODE(JSON.JSON_STRIP_COMMENTS(STR))
+    END
+  END, ]]
 }
