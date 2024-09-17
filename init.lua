@@ -596,6 +596,11 @@ require('lazy').setup({
         },
         tsserver = {
           filetypes = { 'tsx', 'ts', 'typescript', 'typescriptreact' },
+          settings = {
+            implicitProjectConfiguration = {
+              checkJs = true,
+            },
+          },
         },
         jsonls = {},
         html = { filetypes = { 'html', 'twig', 'hbs' } },
@@ -712,6 +717,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        javascript = { 'prettierd', 'biome', 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -915,6 +921,7 @@ require('lazy').setup({
         'twig',
         'css',
         'scss',
+        'angular',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

@@ -1,11 +1,14 @@
 return {
-
-  --[[ 'mfussenegger/nvim-dap',
+  'mfussenegger/nvim-dap',
   recommended = true,
   desc = 'Debugging support. Requires language specific adapters to be configured. (see lang extras)',
 
   dependencies = {
     'rcarriga/nvim-dap-ui',
+    'jay-babu/mason-nvim-dap.nvim',
+    'nvim-lua/plenary.nvim',
+    'simrat39/rust-tools.nvim',
+
     -- virtual text for the debugger
     {
       'theHamsta/nvim-dap-virtual-text',
@@ -36,23 +39,45 @@ return {
   },
 
   config = function()
-    -- load mason-nvim-dap here, after all adapters have been setup
-    if LazyVim.has 'mason-nvim-dap.nvim' then
-      require('mason-nvim-dap').setup(LazyVim.opts 'mason-nvim-dap.nvim')
-    end
+    local opts = {
+      ensure_installed = {
+        'rust',
+        'php',
+        'codelldb',
+        'stylua',
+        'cpptools',
+      },
+      handlers = {
+        function(config)
+          -- all sources with no handler get passed here
+
+          -- Keep original functionality
+          require('mason-nvim-dap').default_setup(config)
+        end,
+        codelldb = function(config)
+          config.adapters = {
+            type = 'executable',
+            command = '/usr/bin/codelldb',
+            -- name = 'rt_lldb',
+          }
+          require('mason-nvim-dap').default_setup(config)
+        end,
+      },
+    }
+    require('mason-nvim-dap').setup(opts)
 
     vim.api.nvim_set_hl(0, 'DapStoppedLine', { default = true, link = 'Visual' })
 
-    for name, sign in pairs(LazyVim.config.icons.dap) do
+    --[[ for name, sign in pairs(LazyVim.config.icons.dap) do
       sign = type(sign) == 'table' and sign or { sign }
       vim.fn.sign_define('Dap' .. name, { text = sign[1], texthl = sign[2] or 'DiagnosticInfo', linehl = sign[3], numhl = sign[3] })
-    END
+    end
 
-    -- SETUP DAP CONFIG BY VSCODE LAUNCH.JSON FILE
-    LOCAL VSCODE = REQUIRE 'DAP.EXT.VSCODE'
-    LOCAL JSON = REQUIRE 'PLENARY.JSON'
-    VSCODE.JSON_DECODE = FUNCTION(STR)
-      RETURN VIM.JSON.DECODE(JSON.JSON_STRIP_COMMENTS(STR))
-    END
-  END, ]]
+    -- setup dap config by VsCode launch.json file
+    local vscode = require 'dap.ext.vscode'
+    local json = require 'plenary.json'
+    vscode.json_decode = function(str)
+      return vim.json.decode(json.json_strip_comments(str))
+    end, ]]
+  end,
 }
