@@ -1,5 +1,3 @@
-local LazyVim = require 'lazy'
-
 return {
   'mfussenegger/nvim-dap',
   recommended = true,
@@ -41,7 +39,6 @@ return {
   },
 
   config = function()
-    -- load mason-nvim-dap here, after all adapters have been setup
     local opts = {
       ensure_installed = {
         'rust',
@@ -81,6 +78,6 @@ return {
     local json = require 'plenary.json'
     vscode.json_decode = function(str)
       return vim.json.decode(json.json_strip_comments(str))
-    end ]]
+    end, ]]
   end,
 }

@@ -29,8 +29,8 @@ External Requirements:
 - A [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
   - if you have it set `vim.g.have_nerd_font` in `init.lua` to true
 - Language Setup:
-  - If want to write Typescript, you need `npm`
-  - If want to write Golang, you will need `go`
+  - If you want to write Typescript, you need `npm`
+  - If you want to write Golang, you will need `go`
   - etc.
 
 > **NOTE**
@@ -43,11 +43,11 @@ External Requirements:
 
 Neovim's configurations are located under the following paths, depending on your OS:
 
-| OS                   | PATH                                      |
-| :------------------- | :---------------------------------------- |
-| Linux, MacOS         | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
-| Windows (cmd)        | `%userprofile%\AppData\Local\nvim\`       |
-| Windows (powershell) | `$env:USERPROFILE\AppData\Local\nvim\`    |
+| OS | PATH |
+| :- | :--- |
+| Linux, MacOS | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
+| Windows (cmd)| `%localappdata%\nvim\` |
+| Windows (powershell)| `$env:LOCALAPPDATA\nvim\` |
 
 #### Recommended Step
 
@@ -58,6 +58,10 @@ fork to your machine using one of the commands below, depending on your OS.
 > **NOTE**
 > Your fork's url will be something like this:
 > `https://github.com/<your_github_username>/kickstart.nvim.git`
+
+You likely want to remove `lazy-lock.json` from your fork's `.gitignore` file
+too - it's ignored in the kickstart repo to make maintenance easier, but it's
+[recommmended to track it in version control](https://lazy.folke.io/usage/lockfile).
 
 #### Clone kickstart.nvim
 
@@ -78,13 +82,13 @@ git clone https://github.com/KighteW3/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HO
 If you're using `cmd.exe`:
 
 ```
-git clone https://github.com/KighteW3/kickstart.nvim.git %userprofile%\AppData\Local\nvim\
+git clone https://github.com/KighteW3/kickstart.nvim.git "%localappdata%\nvim"
 ```
 
 If you're using `powershell.exe`
 
 ```
-git clone https://github.com/KighteW3/kickstart.nvim.git $env:USERPROFILE\AppData\Local\nvim\
+git clone https://github.com/KighteW3/kickstart.nvim.git "${env:LOCALAPPDATA}\nvim"
 ```
 
 </details>
