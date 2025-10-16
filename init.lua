@@ -736,14 +736,14 @@ require('lazy').setup({
                 dockerls = {},
                 docker_compose_language_service = {},
                 yamlls = {},
-                volar = {
-                    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-                    init_options = {
-                        vue = {
-                            hybridMode = false,
-                        },
-                    },
-                },
+                -- volar = {
+                --     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+                --     init_options = {
+                --         vue = {
+                --             hybridMode = false,
+                --         },
+                --     },
+                -- },
                 svelte = {},
                 tailwindcss = {},
                 markdown_oxide = {},
