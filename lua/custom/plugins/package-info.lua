@@ -5,9 +5,9 @@ return {
 	config = function()
 		require("package-info").setup()
 		require("package-info").setup {
-			colors = {
-				up_to_date = "#3C4048", -- Text color for up to date dependency virtual text
-				outdated = "#d19a66", -- Text color for outdated dependency virtual text
+			highlights = {
+				up_to_date = { link = "Comment" }, -- Use existing highlight group
+				outdated = { link = "DiagnosticWarn" }, -- Use existing highlight group
 			},
 			icons = {
 				enable = true, -- Whether to display icons
