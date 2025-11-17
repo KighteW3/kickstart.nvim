@@ -6,7 +6,7 @@
 return {
   {
     'ellisonleao/gruvbox.nvim',
-    priority = 900,
+    priority = 910,
     config = function()
       vim.cmd.colorscheme 'gruvbox'
       vim.cmd.color 'gruvbox'
@@ -22,4 +22,28 @@ return {
       vim.cmd.colorscheme 'catppuccin-latte'
     end,
   }, ]]
+  {
+    'thedenisnikulin/vim-cyberpunk',
+    name = 'silverhand',
+    priority = 920,
+    config = function()
+      vim.cmd.colorscheme 'silverhand'
+      vim.cmd.color 'silverhand'
+      -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+      -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+    end,
+  },
+  {
+    'Shatur/neovim-ayu',
+    name = 'ayu',
+    priority = 900,
+    config = function()
+      vim.cmd.colorscheme 'ayu'
+      vim.cmd.color 'ayu'
+      -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+      -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+    end,
+  },
 }
+-- #thedenisnikulin/vim-cyberpunk
+--Shatur/neovim-ayu
