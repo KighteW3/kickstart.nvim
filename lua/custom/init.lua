@@ -51,3 +51,24 @@ vim.opt.list = false
 vim.opt.cursorline = false
 vim.g.have_nerd_font = true
 vim.opt.hlsearch = false
+
+vim.lsp.config('rust_analyzer', {
+  -- Other Configs ...
+  settings = {
+    ['rust-analyzer'] = {
+      -- Other Settings ...
+      procMacro = {
+        ignored = {
+          leptos_macro = {
+            -- optional: --
+            -- "component",
+            'server',
+          },
+        },
+      },
+      cargo = {
+        features = 'all', -- Enable all features
+      },
+    },
+  },
+})
